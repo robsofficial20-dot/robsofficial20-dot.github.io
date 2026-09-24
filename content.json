@@ -1,0 +1,46 @@
+{
+  "site": {
+    "name": "Robin Victorino",
+    "shortName": "ROBIN",
+    "title": "Creative Director / Designer",
+    "tagline": "BUILT TO",
+    "tagline2": "STAND OUT.",
+    "overline": "Graphic Designer · Multimedia Artist · Creative",
+    "intro": "I build visual identities, digital content and automotive-focused creative work with a clean eye, strong concepts and attention to detail.",
+    "location": "Philippines",
+    "year": "2026"
+  },
+  "about": {
+    "lead": "I'm a creative designer focused on visual identity, digital content and automotive / motorcycle culture.",
+    "highlight": "My approach is simple: clean execution, strong concepts and attention to detail.",
+    "note": "Design that feels intentional. Built for brands, communities and people who care about how their work looks.",
+    "focus": "Identity · Digital · Automotive",
+    "tools": "Photoshop · Canva · CapCut · Vegas",
+    "style": "Clean · Bold · Purposeful",
+    "skills": ["Graphic Design","Brand Identity","Photo Manipulation","Video Editing","Social Content","Merch Design"]
+  },
+  "projects": [
+    {"title":"GoodBoyz","description":"Community branding · Identity · Social graphics","image":"assets/project-01.jpg"},
+    {"title":"Clean Builds Only","description":"Brand concept · Apparel · Typography","image":"assets/project-02.jpg"},
+    {"title":"Motorcycle Visuals","description":"Photo manipulation · Compositing · Automotive","image":"assets/project-03.jpg"},
+    {"title":"Event & Social Graphics","description":"Campaigns · Posters · Digital content","image":"assets/project-04.jpg"},
+    {"title":"Merchandise Design","description":"Jerseys · Stickers · Print-ready artwork","image":"assets/project-05.jpg"},
+    {"title":"Video & Motion Content","description":"Reels · Short-form · Promotional edits","image":"assets/project-06.jpg"}
+  ],
+  "services": [
+    {"title":"Branding","description":"Logos, visual identity, typography and brand systems."},
+    {"title":"Graphic Design","description":"Posters, social graphics, campaigns and layouts."},
+    {"title":"Photo Editing","description":"Retouching, compositing, automotive edits and manipulation."},
+    {"title":"Video Editing","description":"Reels, event recaps, promotional edits and short-form content."},
+    {"title":"Merch Design","description":"Jerseys, shirts, stickers and print-ready artwork."},
+    {"title":"Content Design","description":"Consistent visual content for communities, brands and campaigns."}
+  ],
+  "contact": {
+    "email": "your@email.com",
+    "instagramName": "@yourusername",
+    "instagramUrl": "#",
+    "facebookName": "@yourusername",
+    "facebookUrl": "#",
+    "location": "Philippines"
+  }
+}
