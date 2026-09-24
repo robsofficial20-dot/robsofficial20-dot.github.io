@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Robin Victorino",
-    "shortName": "ROBIN",
+    "shortName": "ROBS VSL",
     "title": "Creative Director / Designer",
     "tagline": "BUILT TO",
     "tagline2": "STAND OUT.",
@@ -11,12 +11,12 @@
     "year": "2026"
   },
   "about": {
-    "lead": "I'm a creative designer focused on visual identity, digital content and automotive / motorcycle culture.",
+    "lead": "I'm a creative designer focused on visual identity, digital content, motorcycle culture, & poster arts.",
     "highlight": "My approach is simple: clean execution, strong concepts and attention to detail.",
     "note": "Design that feels intentional. Built for brands, communities and people who care about how their work looks.",
-    "focus": "Identity · Digital · Automotive",
-    "tools": "Photoshop · Canva · CapCut · Vegas",
-    "style": "Clean · Bold · Purposeful",
+    "focus": "Identity · Visuals · Poster Designs",
+    "tools": "Photoshop · Canva · CapCut · Sony Vegas · Illustrator",
+    "style": "Clean · Bold · Refined",
     "skills": ["Graphic Design","Brand Identity","Photo Manipulation","Video Editing","Social Content","Merch Design"]
   },
   "projects": [
@@ -36,11 +36,11 @@
     {"title":"Content Design","description":"Consistent visual content for communities, brands and campaigns."}
   ],
   "contact": {
-    "email": "your@email.com",
-    "instagramName": "@yourusername",
-    "instagramUrl": "#",
-    "facebookName": "@yourusername",
-    "facebookUrl": "#",
+    "email": "robinvictorinog@gmail.com",
+    "instagramName": "@rrobsanti",
+    "instagramUrl": "https://www.instagram.com/rrobsanti/",
+    "facebookName": "Robin Victorino (robs)",
+    "facebookUrl": "https://www.facebook.com/robsvctrno",
     "location": "Philippines"
   }
 }
