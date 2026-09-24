@@ -1,4 +1,4 @@
-# Robin Victorino Portfolio
+# ROBVSL Portfolio
 Live site: https://robsofficial20-dot.github.io/
 
 ## Replace portfolio images
@@ -14,7 +14,7 @@ The project cards will automatically display them.
 
 ## Edit contact details
 Open index.html and replace:
-- your@email.com
-- @yourusername
+- robinvictorinog@gmail.com
+- @rrobsanti
 
 GitHub Pages uses the main branch and index.html as the site entry point.
