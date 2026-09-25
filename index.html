@@ -27,7 +27,7 @@ header{height:82px;position:fixed;top:0;left:0;right:0;z-index:15;background:rgb
 <main>
 <section class="hero"><div class="wrap hero-inner reveal"><div class="overline" id="heroOverline"></div><h1><span id="heroTag1"></span><br><span id="heroTag2"></span></h1><div class="hero-bottom"><p class="hero-copy" id="heroIntro"></p><div class="hero-meta">Based in<br><strong><span id="heroLocation"></span> · <span id="heroYear"></span></strong></div></div></div></section>
 <section class="section" id="about"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">01 / About</div><h2 class="section-title">THE CREATIVE<br>BEHIND IT.</h2></div><p class="section-note" id="aboutNote"></p></div><div class="about reveal"><div class="about-lead"><span id="aboutLead"></span><br><br><b id="aboutHighlight"></b></div><div class="about-right"><div class="fact"><span>Focus</span><strong id="aboutFocus"></strong></div><div class="fact"><span>Tools</span><strong id="aboutTools"></strong></div><div class="fact"><span>Style</span><strong id="aboutStyle"></strong></div><div class="chips" id="skills"></div></div></div></div></section>
-<section class="section" id="work"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">02 / Selected Work</div><h2 class="section-title">SELECTED<br>PROJECTS.</h2></div><p class="section-note">Replace each sample image with your own work inside <b>assets/</b>. Click a project image to preview it larger.</p></div><div class="workgrid" id="projects"></div></div></section>
+<section class="section" id="work"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">02 / Selected Work</div><h2 class="section-title">SELECTED<br>PROJECTS.</h2></div><p class="section-note">Drop any JPG or PNG into <b>assets/</b>. Your portfolio will detect the images automatically.</p></div><div class="workgrid" id="projects"></div></div></section>
 <section class="section" id="services"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">03 / Capabilities</div><h2 class="section-title">WHAT I<br>CREATE.</h2></div></div><div class="services" id="servicesGrid"></div></div></section>
 <section class="statement"><div class="wrap reveal"><p>GOOD DESIGN ISN'T <span>JUST SEEN.</span><br>IT'S <span>REMEMBERED.</span></p></div></section>
 <section class="section" id="contact"><div class="wrap"><div class="contact reveal"><div><div class="eyebrow">04 / Contact</div><h2 class="contact-title">LET'S MAKE<br><span>SOMETHING.</span></h2></div><div class="contact-list"><div class="contact-item"><span>Email</span><a id="emailLink"></a></div><div class="contact-item"><span>Instagram</span><a id="instagramLink"></a></div><div class="contact-item"><span>Facebook</span><a id="facebookLink"></a></div><div class="contact-item"><span>Location</span><strong id="contactLocation"></strong></div></div></div></div></section>
@@ -51,7 +51,28 @@ document.getElementById("aboutFocus").textContent=d.about.focus;
 document.getElementById("aboutTools").textContent=d.about.tools;
 document.getElementById("aboutStyle").textContent=d.about.style;
 document.getElementById("skills").innerHTML=d.about.skills.map(x=>'<div class="chip">'+x+'</div>').join("");
-document.getElementById("projects").innerHTML=d.projects.map((p,i)=>'<article class="project reveal" data-img="'+p.image+'"><div class="visual"><div class="project-top"><span>'+String(i+1).padStart(2,"0")+' / '+String(d.projects.length).padStart(2,"0")+'</span><span>VIEW PROJECT</span></div><img src="'+p.image+'" alt="'+p.title+'" onerror="this.style.display=\'none\'"><div class="placeholder">YOUR WORK / '+String(i+1).padStart(2,"0")+'</div></div><div class="project-bottom"><div><h3>'+p.title+'</h3><p>'+p.description+'</p></div><div class="arrow">↗</div></div></article>').join("");
+const projectMeta=d.projects||[];
+const projectFallback=(i)=>projectMeta[i]||{title:"Project "+String(i+1).padStart(2,"0"),description:"Portfolio work"};
+const repoOwner="robvisual",repoName="robvisual.github.io",repoBranch="main";
+const grid=document.getElementById("projects");
+fetch("https://api.github.com/repos/"+repoOwner+"/"+repoName+"/contents/assets?ref="+repoBranch)
+.then(r=>r.ok?r.json():[])
+.then(files=>{
+  const images=files.filter(f=>f.type==="file"&&/\.(jpe?g|png)$/i.test(f.name));
+  if(!images.length){
+    grid.innerHTML='<div class="project reveal" style="grid-column:1/-1;cursor:default"><div class="visual"><div class="placeholder">UPLOAD JPG / PNG TO ASSETS</div></div><div class="project-bottom"><div><h3>Your work goes here.</h3><p>Add any JPG or PNG to the assets folder on GitHub.</p></div></div></div>';
+  }else{
+    grid.innerHTML=images.map((file,i)=>{
+      const meta=projectFallback(i);
+      const title=(meta.title&&meta.title.indexOf("Project ")!==0)?meta.title:file.name.replace(/\.(jpe?g|png)$/i,"").replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+      const desc=meta.description||"Portfolio work";
+      return '<article class="project reveal" data-img="'+file.download_url+'"><div class="visual"><div class="project-top"><span>'+String(i+1).padStart(2,"0")+' / '+String(images.length).padStart(2,"0")+'</span><span>VIEW PROJECT</span></div><img src="'+file.download_url+'" alt="'+title+'"><div class="placeholder">YOUR WORK / '+String(i+1).padStart(2,"0")+'</div></div><div class="project-bottom"><div><h3>'+title+'</h3><p>'+desc+'</p></div><div class="arrow">↗</div></div></article>';
+    }).join("");
+  }
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+  document.querySelectorAll(".project").forEach(card=>card.addEventListener("click",()=>{const src=card.dataset.img;const img=card.querySelector("img");if(img&&img.naturalWidth){big.src=src;big.alt=img.alt;box.classList.add("open")}}));
+})
+.catch(e=>console.error("Could not load assets",e));
 document.getElementById("servicesGrid").innerHTML=d.services.map((s,i)=>'<div class="service reveal"><div class="service-num">'+String(i+1).padStart(2,"0")+'</div><h3>'+s.title+'</h3><p>'+s.description+'</p></div>').join("");
 document.getElementById("emailLink").textContent=d.contact.email;document.getElementById("emailLink").href="mailto:"+d.contact.email;
 document.getElementById("instagramLink").textContent=d.contact.instagramName;document.getElementById("instagramLink").href=d.contact.instagramUrl;
