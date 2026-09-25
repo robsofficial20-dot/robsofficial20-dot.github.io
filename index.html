@@ -18,7 +18,7 @@ header{height:82px;position:fixed;top:0;left:0;right:0;z-index:15;background:rgb
 .statement{padding:150px 0;overflow:hidden}.statement p{font:500 clamp(42px,7vw,94px)/.94 "Space Grotesk";letter-spacing:-.08em;max-width:1050px}.statement p span{color:#555}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:80px}.contact-title{font:600 clamp(52px,8vw,100px)/.85 "Space Grotesk";letter-spacing:-.08em}.contact-title span{color:#666}.contact-list{border-top:1px solid var(--line)}.contact-item{padding:23px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:13px}.contact-item span{color:#666;text-transform:uppercase;font-size:9px;letter-spacing:.18em}.contact-item a{color:#ccc}.footer{padding:35px 0;display:flex;justify-content:space-between;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.13em}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
-#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:30;display:none;align-items:center;justify-content:center;padding:30px}#lightbox.open{display:flex}.lightbox-inner{width:min(1100px,94vw);max-height:90vh;position:relative}.lightbox-inner img{width:100%;max-height:80vh;object-fit:contain}.close{position:absolute;right:0;top:-45px;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:30;display:none;align-items:center;justify-content:center;padding:30px}#lightbox.open{display:flex}.lightbox-inner{width:min(1180px,94vw);max-height:92vh;position:relative}.project-gallery{overflow:auto}.gallery-head{display:flex;align-items:end;justify-content:space-between;gap:25px;padding:0 0 25px;border-bottom:1px solid #222;margin-bottom:25px}.gallery-head h2{font:500 34px "Space Grotesk";letter-spacing:-.05em;margin-top:8px}.gallery-head>div:nth-child(2){color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.16em}.close{position:static;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;margin-left:10px}.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.gallery-item{background:#0d0d0d;border:1px solid #1d1d1d;overflow:hidden}.gallery-item img{display:block;width:100%;height:auto;max-height:72vh;object-fit:contain}@media(max-width:800px){.gallery-grid{grid-template-columns:1fr}.gallery-head{align-items:start}.gallery-head h2{font-size:26px}}
 @media(max-width:800px){.navlinks{display:none}.hero{padding-top:140px}.hero h1{font-size:clamp(62px,18vw,110px)}.hero-bottom,.section-label{display:block}.hero-meta{text-align:left;margin-top:30px}.about,.contact{grid-template-columns:1fr;gap:50px}.workgrid{grid-template-columns:1fr}.visual{height:390px}.services{grid-template-columns:1fr}.service{border-right:0}.statement{padding:100px 0}.footer{display:block}.footer span{display:block;margin-bottom:8px}}
 </style>
 </head>
@@ -27,13 +27,13 @@ header{height:82px;position:fixed;top:0;left:0;right:0;z-index:15;background:rgb
 <main>
 <section class="hero"><div class="wrap hero-inner reveal"><div class="overline" id="heroOverline"></div><h1><span id="heroTag1"></span><br><span id="heroTag2"></span></h1><div class="hero-bottom"><p class="hero-copy" id="heroIntro"></p><div class="hero-meta">Based in<br><strong><span id="heroLocation"></span> · <span id="heroYear"></span></strong></div></div></div></section>
 <section class="section" id="about"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">01 / About</div><h2 class="section-title">THE CREATIVE<br>BEHIND IT.</h2></div><p class="section-note" id="aboutNote"></p></div><div class="about reveal"><div class="about-lead"><span id="aboutLead"></span><br><br><b id="aboutHighlight"></b></div><div class="about-right"><div class="fact"><span>Focus</span><strong id="aboutFocus"></strong></div><div class="fact"><span>Tools</span><strong id="aboutTools"></strong></div><div class="fact"><span>Style</span><strong id="aboutStyle"></strong></div><div class="chips" id="skills"></div></div></div></div></section>
-<section class="section" id="work"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">02 / Selected Work</div><h2 class="section-title">SELECTED<br>PROJECTS.</h2></div><p class="section-note">Drop any JPG or PNG into <b>assets/</b>. Your portfolio will detect the images automatically.</p></div><div class="workgrid" id="projects"></div></div></section>
+<section class="section" id="work"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">02 / Selected Work</div><h2 class="section-title">SELECTED<br>PROJECTS.</h2></div><p class="section-note">Five creative categories. Each project can hold multiple JPG or PNG images.</p></div><div class="workgrid" id="projects"></div></div></section>
 <section class="section" id="services"><div class="wrap"><div class="section-label reveal"><div><div class="eyebrow">03 / Capabilities</div><h2 class="section-title">WHAT I<br>CREATE.</h2></div></div><div class="services" id="servicesGrid"></div></div></section>
 <section class="statement"><div class="wrap reveal"><p>GOOD DESIGN ISN'T <span>JUST SEEN.</span><br>IT'S <span>REMEMBERED.</span></p></div></section>
 <section class="section" id="contact"><div class="wrap"><div class="contact reveal"><div><div class="eyebrow">04 / Contact</div><h2 class="contact-title">LET'S MAKE<br><span>SOMETHING.</span></h2></div><div class="contact-list"><div class="contact-item"><span>Email</span><a id="emailLink"></a></div><div class="contact-item"><span>Instagram</span><a id="instagramLink"></a></div><div class="contact-item"><span>Facebook</span><a id="facebookLink"></a></div><div class="contact-item"><span>Location</span><strong id="contactLocation"></strong></div></div></div></div></section>
 </main>
 <footer class="wrap footer"><span>© <span id="footerYear"></span> <span id="footerName"></span></span><span>Designed & built for the work.</span></footer>
-<div id="lightbox"><div class="lightbox-inner"><button class="close" aria-label="Close">×</button><img id="lightbox-img" alt=""></div></div>
+<div id="lightbox"><div class="lightbox-inner project-gallery"><div class="gallery-head"><div><div class="eyebrow">PROJECT GALLERY</div><h2 id="gallery-title"></h2></div><div id="gallery-count"></div><button class="close" aria-label="Close">×</button></div><div class="gallery-grid" id="gallery-grid"></div></div></div>
 <script>
 fetch("content.json").then(r=>r.json()).then(d=>{
 document.title=d.site.name+" — "+d.site.title;
@@ -52,27 +52,37 @@ document.getElementById("aboutTools").textContent=d.about.tools;
 document.getElementById("aboutStyle").textContent=d.about.style;
 document.getElementById("skills").innerHTML=d.about.skills.map(x=>'<div class="chip">'+x+'</div>').join("");
 const projectMeta=d.projects||[];
-const projectFallback=(i)=>projectMeta[i]||{title:"Project "+String(i+1).padStart(2,"0"),description:"Portfolio work"};
 const repoOwner="robvisual",repoName="robvisual.github.io",repoBranch="main";
 const grid=document.getElementById("projects");
-fetch("https://api.github.com/repos/"+repoOwner+"/"+repoName+"/contents/assets?ref="+repoBranch)
-.then(r=>r.ok?r.json():[])
-.then(files=>{
-  const images=files.filter(f=>f.type==="file"&&/\.(jpe?g|png)$/i.test(f.name));
-  if(!images.length){
-    grid.innerHTML='<div class="project reveal" style="grid-column:1/-1;cursor:default"><div class="visual"><div class="placeholder">UPLOAD JPG / PNG TO ASSETS</div></div><div class="project-bottom"><div><h3>Your work goes here.</h3><p>Add any JPG or PNG to the assets folder on GitHub.</p></div></div></div>';
-  }else{
-    grid.innerHTML=images.map((file,i)=>{
-      const meta=projectFallback(i);
-      const title=(meta.title&&meta.title.indexOf("Project ")!==0)?meta.title:file.name.replace(/\.(jpe?g|png)$/i,"").replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
-      const desc=meta.description||"Portfolio work";
-      return '<article class="project reveal" data-img="'+file.download_url+'"><div class="visual"><div class="project-top"><span>'+String(i+1).padStart(2,"0")+' / '+String(images.length).padStart(2,"0")+'</span><span>VIEW PROJECT</span></div><img src="'+file.download_url+'" alt="'+title+'"><div class="placeholder">YOUR WORK / '+String(i+1).padStart(2,"0")+'</div></div><div class="project-bottom"><div><h3>'+title+'</h3><p>'+desc+'</p></div><div class="arrow">↗</div></div></article>';
-    }).join("");
-  }
+const folderCache={};
+function loadFolder(folder){
+  if(folderCache[folder]) return folderCache[folder];
+  folderCache[folder]=fetch("https://api.github.com/repos/"+repoOwner+"/"+repoName+"/contents/"+folder+"?ref="+repoBranch)
+    .then(r=>r.ok?r.json():[])
+    .then(files=>files.filter(f=>f.type==="file"&&/\.(jpe?g|png)$/i.test(f.name)));
+  return folderCache[folder];
+}
+function renderProjectCard(meta,i,images){
+  const cover=images[0]?.download_url||"", count=images.length;
+  return '<article class="project reveal" data-project="'+i+'"><div class="visual"><div class="project-top"><span>'+String(i+1).padStart(2,"0")+' / '+String(projectMeta.length).padStart(2,"0")+'</span><span>'+count+' '+(count===1?'IMAGE':'IMAGES')+'</span></div>'+
+    (cover?'<img src="'+cover+'" alt="'+meta.title+'">':'<div class="placeholder">ADD IMAGES TO '+meta.folder.toUpperCase()+'</div>')+
+    '</div><div class="project-bottom"><div><h3>'+meta.title+'</h3><p>'+meta.description+'</p></div><div class="arrow">↗</div></div></article>';
+}
+function openGallery(meta,images){
+  galleryTitle.textContent=meta.title;
+  galleryCount.textContent=images.length+" "+(images.length===1?"IMAGE":"IMAGES");
+  galleryGrid.innerHTML=images.map((file,index)=>'<div class="gallery-item"><img src="'+file.download_url+'" alt="'+meta.title+' — '+String(index+1)+'"></div>').join("");
+  galleryBox.classList.add("open");
+}
+Promise.all(projectMeta.map(p=>loadFolder(p.folder))).then(allImages=>{
+  grid.innerHTML=projectMeta.map((meta,i)=>renderProjectCard(meta,i,allImages[i])).join("");
+  document.querySelectorAll(".project").forEach(card=>card.addEventListener("click",()=>{
+    const i=Number(card.dataset.project),images=allImages[i]||[];
+    if(images.length) openGallery(projectMeta[i],images);
+  }));
   document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-  document.querySelectorAll(".project").forEach(card=>card.addEventListener("click",()=>{const src=card.dataset.img;const img=card.querySelector("img");if(img&&img.naturalWidth){big.src=src;big.alt=img.alt;box.classList.add("open")}}));
-})
-.catch(e=>console.error("Could not load assets",e));
+}).catch(e=>console.error("Could not load project folders",e));
+
 document.getElementById("servicesGrid").innerHTML=d.services.map((s,i)=>'<div class="service reveal"><div class="service-num">'+String(i+1).padStart(2,"0")+'</div><h3>'+s.title+'</h3><p>'+s.description+'</p></div>').join("");
 document.getElementById("emailLink").textContent=d.contact.email;document.getElementById("emailLink").href="mailto:"+d.contact.email;
 document.getElementById("instagramLink").textContent=d.contact.instagramName;document.getElementById("instagramLink").href=d.contact.instagramUrl;
@@ -81,8 +91,8 @@ document.getElementById("contactLocation").textContent=d.contact.location;
 document.getElementById("footerYear").textContent=d.site.year;document.getElementById("footerName").textContent=d.site.name;
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-const box=document.getElementById("lightbox"),big=document.getElementById("lightbox-img");
-document.querySelectorAll(".project").forEach(card=>card.addEventListener("click",()=>{const src=card.dataset.img;const img=card.querySelector("img");if(img&&img.naturalWidth){big.src=src;big.alt=img.alt;box.classList.add("open")}}));
+const box=document.getElementById("lightbox"),galleryBox=box,galleryTitle=document.getElementById("gallery-title"),galleryCount=document.getElementById("gallery-count"),galleryGrid=document.getElementById("gallery-grid");
+
 document.querySelector(".close").onclick=()=>box.classList.remove("open");box.addEventListener("click",e=>{if(e.target===box)box.classList.remove("open")});document.addEventListener("keydown",e=>{if(e.key==="Escape")box.classList.remove("open")});
 }).catch(e=>console.error("Could not load content.json",e));
 </script>
