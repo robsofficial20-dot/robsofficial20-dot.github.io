@@ -20,12 +20,11 @@
     "skills": ["Graphic Design","Brand Identity","Photo Manipulation","Video Editing","Social Content","Merch Design"]
   },
   "projects": [
-    {"title":"GoodBoyz","description":"Community branding · Identity · Social graphics","image":"assets/project-01.jpg"},
-    {"title":"Clean Builds Only","description":"Brand concept · Apparel · Typography","image":"assets/project-02.jpg"},
-    {"title":"Motorcycle Visuals","description":"Photo manipulation · Compositing · Automotive","image":"assets/project-03.jpg"},
-    {"title":"Event & Social Graphics","description":"Campaigns · Posters · Digital content","image":"assets/project-04.jpg"},
-    {"title":"Merchandise Design","description":"Jerseys · Stickers · Print-ready artwork","image":"assets/project-05.jpg"},
-    {"title":"Video & Motion Content","description":"Reels · Short-form · Promotional edits","image":"assets/project-06.jpg"}
+    {"title":"Motorcycle Visuals","description":"Photo manipulation · Compositing · Automotive","folder":"assets/motorcycle-visuals"},
+    {"title":"Event & Social Graphics","description":"Campaigns · Posters · Digital content","folder":"assets/event-social-graphics"},
+    {"title":"Merchandise Design","description":"Jerseys · Stickers · Print-ready artwork","folder":"assets/merchandise-design"},
+    {"title":"Logo/Brand Design","description":"Logos · Visual identity · Typography","folder":"assets/logo-brand-design"},
+    {"title":"Video & Motion Content","description":"Reels · Short-form · Promotional edits","folder":"assets/video-motion-content"}
   ],
   "services": [
     {"title":"Branding","description":"Logos, visual identity, typography and brand systems."},
